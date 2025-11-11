@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <utility> 
 #include <memory>
 #include <cassert>
@@ -63,7 +64,7 @@ public:
         if (left_key > right_key) 
             return 0;
 
-        auto left_bound_node = upper_bound_(left_key);
+        auto left_bound_node = lower_bound_(left_key);
         if (!left_bound_node)
             return 0;
 
